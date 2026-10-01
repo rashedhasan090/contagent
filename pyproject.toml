@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "contagent"
+version = "0.1.0"
+description = "Monte Carlo forecasting of prompt-injection contagion in multi-agent LLM systems"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Rashed Hasan" }]
+keywords = ["llm", "agents", "prompt-injection", "security", "simulation", "monte-carlo", "multi-agent"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Topic :: Security",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.scripts]
+contagent = "contagent.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/rashedhasan090/contagent"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
